@@ -14,3 +14,8 @@
     margin: 5px;
     line-height: 42px;
 }
+
+.collapsible-header .fa-caret-down {
+    margin-right: 5px;
+    line-height: 42px;
+}
