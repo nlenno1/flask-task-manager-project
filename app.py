@@ -174,8 +174,14 @@ def edit_category(category_id):
         flash("Category Successfully Updated")
         return redirect(url_for("get_categories"))
 
-    category = mongo.db.catergories.find_one({"_id": ObjectId(category_id)})
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
+
+
+@app.route("/confirm_cat_delete/<category_id>")
+def confirm_cat_delete(category_id):
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    return render_template("confirm_cat_delete.html", category=category)
 
 
 @app.route("/delete_category/<category_id>")
